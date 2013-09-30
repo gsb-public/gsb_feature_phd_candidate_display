@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the GSB Feature PhD Candidate Display feature.
+ */
+
+include_once 'gsb_feature_phd_candidate_display.features.inc';
