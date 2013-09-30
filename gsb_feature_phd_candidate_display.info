@@ -1,0 +1,15 @@
+name = GSB Feature PhD Candidate Display
+description = The feature for creating the GSB PhD Candidate views
+core = 7.x
+package = GSB
+version = 7.x-1.0
+project = gsb_feature_phd_candidate_display
+dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = gsb_feature_phd_candidate_ct
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = phd_job_market_candidate_detail
+features[views_view][] = phd_job_market_candidates
