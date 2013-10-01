@@ -107,6 +107,13 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = '';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'academic_area';
+  /* Filter criterion: Content: Display Settings (for Administrative use only) (field_job_display) */
+  $handler->display->display_options['filters']['field_job_display_value']['id'] = 'field_job_display_value';
+  $handler->display->display_options['filters']['field_job_display_value']['table'] = 'field_data_field_job_display';
+  $handler->display->display_options['filters']['field_job_display_value']['field'] = 'field_job_display_value';
+  $handler->display->display_options['filters']['field_job_display_value']['value'] = array(
+    'job_market_page' => 'job_market_page',
+  );
   $export['phd_job_market_candidate_detail'] = $view;
 
   $view = new view();
