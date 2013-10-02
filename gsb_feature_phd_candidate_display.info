@@ -12,5 +12,6 @@ dependencies[] = views_content
 datestamp = 1380620506
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[views_view][] = phd_candidate_placement_listing
 features[views_view][] = phd_job_market_candidate_detail
 features[views_view][] = phd_job_market_candidates
