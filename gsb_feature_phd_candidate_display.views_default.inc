@@ -11,6 +11,157 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'phd_candidate_placement_listing';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'PhD Candidate Placement Listing';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_academic_area_single',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<span id="top-placement-listing"></span>';
+  $handler->display->display_options['header']['area']['format'] = 'gsb_html_text';
+  /* Header: Global: View (Views field view) */
+  $handler->display->display_options['header']['view_field']['id'] = 'view_field';
+  $handler->display->display_options['header']['view_field']['table'] = 'views';
+  $handler->display->display_options['header']['view_field']['field'] = 'view_field';
+  $handler->display->display_options['header']['view_field']['label'] = '';
+  $handler->display->display_options['header']['view_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['header']['view_field']['view'] = 'phd_job_market_candidates';
+  $handler->display->display_options['header']['view_field']['display'] = 'phd_job_market_jump_links';
+  /* Field: Content: Academic Area */
+  $handler->display->display_options['fields']['field_academic_area_single']['id'] = 'field_academic_area_single';
+  $handler->display->display_options['fields']['field_academic_area_single']['table'] = 'field_data_field_academic_area_single';
+  $handler->display->display_options['fields']['field_academic_area_single']['field'] = 'field_academic_area_single';
+  $handler->display->display_options['fields']['field_academic_area_single']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_area_single']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_area_single']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_area_single']['alter']['text'] = '<div id="academic-area-[field_academic_area_single-tid]">[field_academic_area_single]</div>';
+  $handler->display->display_options['fields']['field_academic_area_single']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_area_single']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_academic_area_single']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Graduation Year */
+  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
+  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['label'] = '';
+  $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_year']['settings'] = array(
+    'format_type' => 'panopoly_day',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Academic Institution */
+  $handler->display->display_options['fields']['field_academic_institution']['id'] = 'field_academic_institution';
+  $handler->display->display_options['fields']['field_academic_institution']['table'] = 'field_data_field_academic_institution';
+  $handler->display->display_options['fields']['field_academic_institution']['field'] = 'field_academic_institution';
+  $handler->display->display_options['fields']['field_academic_institution']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_institution']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_institution']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Dissertation */
+  $handler->display->display_options['fields']['field_dissertation']['id'] = 'field_dissertation';
+  $handler->display->display_options['fields']['field_dissertation']['table'] = 'field_data_field_dissertation';
+  $handler->display->display_options['fields']['field_dissertation']['field'] = 'field_dissertation';
+  $handler->display->display_options['fields']['field_dissertation']['label'] = '';
+  $handler->display->display_options['fields']['field_dissertation']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_dissertation']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Sort criterion: Content: Academic Area (field_academic_area_single) */
+  $handler->display->display_options['sorts']['field_academic_area_single_tid']['id'] = 'field_academic_area_single_tid';
+  $handler->display->display_options['sorts']['field_academic_area_single_tid']['table'] = 'field_data_field_academic_area_single';
+  $handler->display->display_options['sorts']['field_academic_area_single_tid']['field'] = 'field_academic_area_single_tid';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'phd_candidate' => 'phd_candidate',
+  );
+  /* Filter criterion: Content: Display Settings (for Administrative use only) (field_job_display) */
+  $handler->display->display_options['filters']['field_job_display_value']['id'] = 'field_job_display_value';
+  $handler->display->display_options['filters']['field_job_display_value']['table'] = 'field_data_field_job_display';
+  $handler->display->display_options['filters']['field_job_display_value']['field'] = 'field_job_display_value';
+  $handler->display->display_options['filters']['field_job_display_value']['value'] = array(
+    'placement_page' => 'placement_page',
+  );
+  /* Filter criterion: Field: Graduation Year (field_year) */
+  $handler->display->display_options['filters']['field_year_value']['id'] = 'field_year_value';
+  $handler->display->display_options['filters']['field_year_value']['table'] = 'field_data_field_year';
+  $handler->display->display_options['filters']['field_year_value']['field'] = 'field_year_value';
+  $handler->display->display_options['filters']['field_year_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_year_value']['default_date'] = 'now -8 year';
+  $handler->display->display_options['filters']['field_year_value']['default_to_date'] = 'now';
+  $handler->display->display_options['filters']['field_year_value']['year_range'] = '-8:+0';
+
+  /* Display: Phd Candidate Placement Listing */
+  $handler = $view->new_display('panel_pane', 'Phd Candidate Placement Listing', 'panel_pane_phd_placement_listing');
+  $handler->display->display_options['pane_title'] = 'Phd Candidate Placement Listing';
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $export['phd_candidate_placement_listing'] = $view;
+
+  $view = new view();
   $view->name = 'phd_job_market_candidate_detail';
   $view->description = '';
   $view->tag = 'default';
@@ -173,6 +324,9 @@ function gsb_feature_phd_candidate_display_views_default_views() {
 
   /* Display: Phd Job Market Candidate Listing */
   $handler = $view->new_display('panel_pane', 'Phd Job Market Candidate Listing', 'panel_pane_phd_job_market_listing');
+  $handler->display->display_options['pane_title'] = 'Phd Job Market Candidate Listing';
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Jump Links */
   $handler = $view->new_display('attachment', 'Jump Links', 'phd_job_market_jump_links');
