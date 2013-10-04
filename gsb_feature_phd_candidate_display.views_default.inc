@@ -156,6 +156,8 @@ function gsb_feature_phd_candidate_display_views_default_views() {
 
   /* Display: Phd Candidate Placement Listing */
   $handler = $view->new_display('panel_pane', 'Phd Candidate Placement Listing', 'panel_pane_phd_placement_listing');
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['phd_candidate_placement_listing'] = $view;
 
   $view = new view();
@@ -321,6 +323,8 @@ function gsb_feature_phd_candidate_display_views_default_views() {
 
   /* Display: Phd Job Market Candidate Listing */
   $handler = $view->new_display('panel_pane', 'Phd Job Market Candidate Listing', 'panel_pane_phd_job_market_listing');
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Jump Links */
   $handler = $view->new_display('attachment', 'Jump Links', 'phd_job_market_jump_links');
