@@ -312,6 +312,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['fields']['view']['field'] = 'view';
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view']['view'] = 'phd_job_market_candidate_detail';
   $handler->display->display_options['fields']['view']['arguments'] = '[!tid]';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
@@ -325,14 +326,27 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   /* Display: Phd Job Market Candidate Listing */
   $handler = $view->new_display('panel_pane', 'Phd Job Market Candidate Listing', 'panel_pane_phd_job_market_listing');
   $handler->display->display_options['pane_title'] = 'Phd Job Market Candidate Listing';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'main-view';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Jump Links */
   $handler = $view->new_display('attachment', 'Jump Links', 'phd_job_market_jump_links');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Academic Areas';
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Title';
+  $handler->display->display_options['header']['area']['content'] = '<div class="jump-links-title">Academic Areas</div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
