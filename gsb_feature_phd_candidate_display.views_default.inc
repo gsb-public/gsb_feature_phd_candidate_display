@@ -76,7 +76,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['fields']['field_year']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_year']['settings'] = array(
-    'format_type' => 'graduation_class',
+    'format_type' => 'year',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -131,6 +131,10 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['sorts']['field_academic_area_single_tid']['id'] = 'field_academic_area_single_tid';
   $handler->display->display_options['sorts']['field_academic_area_single_tid']['table'] = 'field_data_field_academic_area_single';
   $handler->display->display_options['sorts']['field_academic_area_single_tid']['field'] = 'field_academic_area_single_tid';
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
