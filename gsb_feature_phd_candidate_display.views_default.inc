@@ -41,7 +41,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<span id="top-placement-listing"></span>';
+  $handler->display->display_options['header']['area']['content'] = '<span id="placement-listing-top"></span>';
   $handler->display->display_options['header']['area']['format'] = 'gsb_html_text';
   /* Header: Global: View (Views field view) */
   $handler->display->display_options['header']['view_field']['id'] = 'view_field';
@@ -68,21 +68,15 @@ function gsb_feature_phd_candidate_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Field: Graduation Year */
   $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
   $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
   $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
   $handler->display->display_options['fields']['field_year']['label'] = '';
+  $handler->display->display_options['fields']['field_year']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_year']['settings'] = array(
-    'format_type' => 'panopoly_day',
+    'format_type' => 'graduation_class',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -94,6 +88,17 @@ function gsb_feature_phd_candidate_display_views_default_views() {
       ),
     ),
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title], [field_year]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Academic Institution */
   $handler->display->display_options['fields']['field_academic_institution']['id'] = 'field_academic_institution';
   $handler->display->display_options['fields']['field_academic_institution']['table'] = 'field_data_field_academic_institution';
@@ -112,6 +117,8 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['fields']['field_dissertation']['table'] = 'field_data_field_dissertation';
   $handler->display->display_options['fields']['field_dissertation']['field'] = 'field_dissertation';
   $handler->display->display_options['fields']['field_dissertation']['label'] = '';
+  $handler->display->display_options['fields']['field_dissertation']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_dissertation']['alter']['text'] = '"[field_dissertation]"';
   $handler->display->display_options['fields']['field_dissertation']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dissertation']['settings'] = array(
     'conditions' => array(
