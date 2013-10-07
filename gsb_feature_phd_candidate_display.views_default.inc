@@ -76,7 +76,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['fields']['field_year']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_year']['settings'] = array(
-    'format_type' => 'year',
+    'format_type' => 'date_format_two_digit_year',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -118,7 +118,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['fields']['field_dissertation']['field'] = 'field_dissertation';
   $handler->display->display_options['fields']['field_dissertation']['label'] = '';
   $handler->display->display_options['fields']['field_dissertation']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_dissertation']['alter']['text'] = '"[field_dissertation]"';
+  $handler->display->display_options['fields']['field_dissertation']['alter']['text'] = '[field_dissertation]';
   $handler->display->display_options['fields']['field_dissertation']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dissertation']['settings'] = array(
     'conditions' => array(
