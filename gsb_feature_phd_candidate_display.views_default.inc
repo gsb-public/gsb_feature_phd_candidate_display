@@ -112,13 +112,13 @@ function gsb_feature_phd_candidate_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Dissertation */
+  /* Field: Content: Dissertation Title */
   $handler->display->display_options['fields']['field_dissertation']['id'] = 'field_dissertation';
   $handler->display->display_options['fields']['field_dissertation']['table'] = 'field_data_field_dissertation';
   $handler->display->display_options['fields']['field_dissertation']['field'] = 'field_dissertation';
   $handler->display->display_options['fields']['field_dissertation']['label'] = '';
   $handler->display->display_options['fields']['field_dissertation']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_dissertation']['alter']['text'] = '[field_dissertation]';
+  $handler->display->display_options['fields']['field_dissertation']['alter']['text'] = '“[field_dissertation]”';
   $handler->display->display_options['fields']['field_dissertation']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dissertation']['settings'] = array(
     'conditions' => array(
