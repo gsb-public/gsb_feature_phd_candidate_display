@@ -76,7 +76,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['fields']['field_year']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_year']['settings'] = array(
-    'format_type' => 'date_format_two_digit_year',
+    'format_type' => 'two_digit_year',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
