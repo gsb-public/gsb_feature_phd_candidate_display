@@ -131,6 +131,11 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['sorts']['field_academic_area_single_tid']['id'] = 'field_academic_area_single_tid';
   $handler->display->display_options['sorts']['field_academic_area_single_tid']['table'] = 'field_data_field_academic_area_single';
   $handler->display->display_options['sorts']['field_academic_area_single_tid']['field'] = 'field_academic_area_single_tid';
+  /* Sort criterion: Field: Graduation Year (field_year) */
+  $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
+  $handler->display->display_options['sorts']['field_year_value']['table'] = 'field_data_field_year';
+  $handler->display->display_options['sorts']['field_year_value']['field'] = 'field_year_value';
+  $handler->display->display_options['sorts']['field_year_value']['order'] = 'DESC';
   /* Sort criterion: Field: Last Name (field_last_name) */
   $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
