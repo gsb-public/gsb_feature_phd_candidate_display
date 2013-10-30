@@ -167,7 +167,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
   $handler->display->display_options['filters']['field_year_value']['table'] = 'field_data_field_year';
   $handler->display->display_options['filters']['field_year_value']['field'] = 'field_year_value';
   $handler->display->display_options['filters']['field_year_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_year_value']['default_date'] = 'now -8 year';
+  $handler->display->display_options['filters']['field_year_value']['default_date'] = 'now -7 year';
   $handler->display->display_options['filters']['field_year_value']['default_to_date'] = 'now';
   $handler->display->display_options['filters']['field_year_value']['year_range'] = '-8:+0';
 
