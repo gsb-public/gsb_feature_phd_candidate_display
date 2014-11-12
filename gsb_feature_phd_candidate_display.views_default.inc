@@ -342,7 +342,7 @@ function gsb_feature_phd_candidate_display_views_default_views() {
 
   /* Display: Phd Job Market Candidate Listing */
   $handler = $view->new_display('panel_pane', 'Phd Job Market Candidate Listing', 'panel_pane_phd_job_market_listing');
-  $handler->display->display_options['pane_title'] = 'Phd Job Market Candidate Listing';
+  $handler->display->display_options['pane_title'] = 'PhD Job Candidates';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'main-view';
